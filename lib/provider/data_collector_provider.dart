@@ -22,16 +22,12 @@ class DataCollector with ChangeNotifier {
       // Get data from API, That will return {"humidity": 12}
       Future.delayed(const Duration(seconds: 1));
       final rawData =
-          await api.requestHandler(uri: "/cd", method: "GET", data: {});
-
-      print(rawData);
+          await api.requestHandler(uri: "/getData", method: "GET", data: {});
       data = rawData;
-
-      debugPrint("This is data from provider ==> ${data.toString()}");
 
       _loadTaskManager = LoadTaskManager.loaded;
     } catch (e) {
-      print("Error From this $e");
+      // print("Data pot catch with: $e");
       _loadTaskManager = LoadTaskManager.error;
     }
 

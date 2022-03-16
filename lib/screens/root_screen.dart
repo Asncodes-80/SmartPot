@@ -38,7 +38,7 @@ class _RootScreenState extends State<RootScreen> {
                 return const Text("Error");
               }
 
-              return Text("Loaded Text => ${dataCollector.data}");
+              return Text("Humidity ${dataCollector.data["humidity"]}");
             }),
           ]),
         ),
