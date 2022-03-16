@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415688336002",
+    "project_id": "shahjump-e45d4",
+    "storage_bucket": "shahjump-e45d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415688336002:android:f8e9ba90f10e119cab4a9b",
+        "android_client_info": {
+          "package_name": "com.example.shahjump"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415688336002-1i6fg9eqo8fifs2uvkjq7bgoqi1akhar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfF20zejG8geRxe8FAulTjYPaKqmxUOPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415688336002-1i6fg9eqo8fifs2uvkjq7bgoqi1akhar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

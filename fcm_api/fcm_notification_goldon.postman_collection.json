@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "76bc8c26-6f98-4be8-b1fd-73ad57cbf2a8",
+		"name": "FCM notification PAYA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://fcm.googleapis.com/fcm/send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "key=AAAAYMj0ooI:APA91bHLqUXjQjMULFnRMn_JfkYvNdBrCvH6habJYlsS3NRSpi5PQqJWDH-NymOVmCPkHm7UsJIQlg0yBXVmuAkd2Ge-OElEM38VGd5Dubriy5gKghlCP01x-BPX1vnGFl0xi62NTT8-",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"to\":\"djUj-s1DRmy2rUlgS_PaG3:APA91bGoJNQRnhixtbw2TGNJ23Kcsx9B_uyiLOOqhf0AcnmKR_fq0MexdUK1IgklIk3n9GW8xgB9JCkG5cw4G_BveGG5daQlivQKGzshJ2AHp4yMAl6jwdV3CL4Vv3BqVILW1KJ89HjH\",\n \"notification\" : {\n  \"sound\" : \"default\",\n  \"body\" :  \"چطوری ممد\",\n  \"title\" : \"این یک پیام خوش‌‌آمد گویی از طرف احمد است\",\n  \"content_available\" : true,\n  \"priority\" : \"high\"\n },\n \"data\": {\n     \"click_action\": \"FLUTTER_NOTIFICATION_CLICK\",\n     \"sound\": \"default\",\n     \"status\": \"done\",\n     \"target\": \"2\" \n }\n}"
+				},
+				"url": {
+					"raw": "https://fcm.googleapis.com/fcm/send",
+					"protocol": "https",
+					"host": [
+						"fcm",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"fcm",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
