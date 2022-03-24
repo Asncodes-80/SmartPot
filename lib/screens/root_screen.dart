@@ -29,14 +29,29 @@ class _RootScreenState extends State<RootScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(children: [
-            const Text("This is route of root"),
+            const Text(
+              "This is route of root",
+              style: const TextStyle(
+                fontFamily: enFontFamily,
+              ),
+            ),
             Builder(builder: (_) {
               if (dataCollector.loadDataIndicate == LoadTaskManager.loading) {
-                return const Text("Loading");
+                return const Text(
+                  "Loading",
+                  style: const TextStyle(
+                    fontFamily: enFontFamily,
+                  ),
+                );
               }
 
               if (dataCollector.loadDataIndicate == LoadTaskManager.error) {
-                return const Text("Error");
+                return const Text(
+                  "Error",
+                  style: const TextStyle(
+                    fontFamily: enFontFamily,
+                  ),
+                );
               }
 
               return Column(
