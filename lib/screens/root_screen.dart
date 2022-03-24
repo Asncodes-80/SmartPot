@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shahjump/config/main.dart';
 import 'package:shahjump/enums/load_task_manager.dart';
 import 'package:shahjump/firebase/messaging/fcm_manager.dart';
 import 'package:shahjump/provider/data_collector_provider.dart';
@@ -38,7 +39,12 @@ class _RootScreenState extends State<RootScreen> {
                 return const Text("Error");
               }
 
-              return Text("Humidity ${dataCollector.data["humidity"]}");
+              return Text(
+                "Humidity ${dataCollector.data["humidity"]}",
+                style: const TextStyle(
+                  fontFamily: enFontFamily,
+                ),
+              );
             }),
           ]),
         ),

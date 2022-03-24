@@ -7,14 +7,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-// import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shahjump/Firebase/Messaging/fcm_manager.dart';
 import 'package:shahjump/Screens/splash_screen.dart';
-// import 'package:shahjump/Theme/theme_data.dart';
+import 'package:shahjump/Theme/theme_data.dart';
 import 'package:shahjump/config/route.dart';
 import 'package:shahjump/controllers/settings_and_preferences.dart';
-// import 'package:shahjump/localization/app_localization.dart';
+import 'package:shahjump/localization/app_localization.dart';
 import 'package:shahjump/provider/data_collector_provider.dart';
 import 'package:shahjump/provider/preferences_provider.dart';
 import 'package:shahjump/screens/root_screen.dart';
@@ -83,15 +83,15 @@ class _MyAppState extends State<MyApp> {
                 return MaterialApp(
                   debugShowCheckedModeBanner: false,
                   // theme: CustomizedTheme.defaultTheme,
-                  // supportedLocales: const [
-                  //   Locale('us', 'en'),
-                  //   Locale('fa', 'IR'),
-                  // ],
-                  // localizationsDelegates: const [
-                  //   AppLocalizations.delegate,
-                  //   GlobalMaterialLocalizations.delegate,
-                  //   // GlobalWidgetsLocalizations.delegate,
-                  // ],
+                  supportedLocales: const [
+                    Locale('us', 'EN'),
+                    Locale('fa', 'IR'),
+                  ],
+                  localizationsDelegates: const [
+                    AppLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    // GlobalWidgetsLocalizations.delegate,
+                  ],
                   // For set app fontSize by default size without system fontSize
                   builder: (BuildContext context, Widget? child) {
                     final MediaQueryData data = MediaQuery.of(context);
