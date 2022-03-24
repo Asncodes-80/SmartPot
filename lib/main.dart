@@ -9,14 +9,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:shahjump/Firebase/Messaging/fcm_manager.dart';
-import 'package:shahjump/Screens/splash_screen.dart';
-import 'package:shahjump/Theme/theme_data.dart';
+import 'package:shahjump/firebase/messaging/fcm_manager.dart';
+// import 'package:shahjump/theme/theme_data.dart';
 import 'package:shahjump/config/route.dart';
 import 'package:shahjump/controllers/settings_and_preferences.dart';
 import 'package:shahjump/localization/app_localization.dart';
+// Providers
 import 'package:shahjump/provider/data_collector_provider.dart';
 import 'package:shahjump/provider/preferences_provider.dart';
+// Screens
+import 'package:shahjump/screens/splash_screen.dart';
 import 'package:shahjump/screens/root_screen.dart';
 
 // Initialize my Flutter FCM Manager
