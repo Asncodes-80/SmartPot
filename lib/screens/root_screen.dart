@@ -31,7 +31,7 @@ class _RootScreenState extends State<RootScreen> {
           child: Column(children: [
             const Text(
               "This is route of root",
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: enFontFamily,
               ),
             ),
@@ -39,7 +39,7 @@ class _RootScreenState extends State<RootScreen> {
               if (dataCollector.loadDataIndicate == LoadTaskManager.loading) {
                 return const Text(
                   "Loading",
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: enFontFamily,
                   ),
                 );
@@ -48,7 +48,7 @@ class _RootScreenState extends State<RootScreen> {
               if (dataCollector.loadDataIndicate == LoadTaskManager.error) {
                 return const Text(
                   "Error",
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: enFontFamily,
                   ),
                 );
