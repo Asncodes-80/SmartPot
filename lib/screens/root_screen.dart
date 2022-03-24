@@ -39,11 +39,16 @@ class _RootScreenState extends State<RootScreen> {
                 return const Text("Error");
               }
 
-              return Text(
-                "Humidity ${dataCollector.data["humidity"]}",
-                style: const TextStyle(
-                  fontFamily: enFontFamily,
-                ),
+              return Column(
+                children: [
+                  const Text("Test somethins"),
+                  Text(
+                    "Humidity ${dataCollector.data["humidity"]}",
+                    style: const TextStyle(
+                      fontFamily: enFontFamily,
+                    ),
+                  ),
+                ],
               );
             }),
           ]),
