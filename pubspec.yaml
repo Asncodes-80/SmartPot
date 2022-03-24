@@ -1,7 +1,7 @@
 name: shahjump
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -16,7 +16,6 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-
 
   cupertino_icons: ^1.0.2
   hexcolor: ^2.0.6
@@ -35,13 +34,12 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
     - assets/
     - assets/fonts/
-    - assets/images/
+    # - assets/images/
     - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
