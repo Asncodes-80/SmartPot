@@ -21,6 +21,8 @@ jobs:
         with:
           channel: 'stable' # 'dev', 'alpha', 'beta', 'stable'
           flutter-version: '2.10.x'
+      # Cleaning Build.
+      - run: flutter clean
       # Get flutter dependencies.
       - run: flutter pub get
       # Build apk.
