@@ -26,9 +26,22 @@ jobs:
           flutter clean
           flutter pub get
           flutter build apk --split-per-abi
-          mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+          mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
+          build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
       # Upload generated apk to the artifacts.
       - uses: actions/upload-artifact@v3
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+  release:
+    name: Release
+    runs-on: macos-latest
+    env:
+      appVersion: 0.0.0 
+    steps:
+      - name: Release
+        uses: fnkr/github.com-action-ghr@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GHR_PATH: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+
