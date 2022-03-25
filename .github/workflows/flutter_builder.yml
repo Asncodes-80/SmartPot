@@ -40,7 +40,7 @@ jobs:
       appVersion: 0.0.0 
     steps:
       - name: Release
-        uses: fnkr/github.com-action-ghr@v1
+        uses: fnkr/github-action-ghr@v1
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           GHR_PATH: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
