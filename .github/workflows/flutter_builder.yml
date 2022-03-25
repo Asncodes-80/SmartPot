@@ -35,7 +35,7 @@ jobs:
           path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
   release:
     name: Release
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     env:
       appVersion: 0.0.0 
     steps:
