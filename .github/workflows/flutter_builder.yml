@@ -25,6 +25,9 @@ jobs:
         with:
           channel: stable # 'dev', 'alpha', 'beta', 'stable'
           flutter-version: 2.10.3
+          cache: true
+          cache-key: asn_flutter_build_ci
+          cache-path: ${{ runner.tool_cache }}
 
       - run: |
           flutter clean
@@ -54,12 +57,16 @@ jobs:
           name: release-apk
           path: build/app/outputs/flutter-apk
 
-      - name: Release app to App Center partner store
-        uses: wzieba/AppCenter-Github-Action@v1
-        with: 
-          appName: SmartPot/SmartPot${{ env.appVersion }}
-          token: ${{ secrets.MS_APP_CENTER_TOKEN }}
-          group: Testers
-          file: build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
-          notifyTesters: true
-          debug: false
+      - run: ls -la
+      - run: ls /build/app/outputs/flutter-apk
+      - run: du -h /build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+
+      # - name: Release app to App Center partner store
+      #   uses: wzieba/AppCenter-Github-Action@v1
+      #   with: 
+      #     appName: SmartPot/SmartPot${{ env.appVersion }}
+      #     token: ${{ secrets.MS_APP_CENTER_TOKEN }}
+      #     group: Testers
+      #     file: build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+      #     notifyTesters: true
+      #     debug: false
