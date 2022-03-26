@@ -58,7 +58,7 @@ jobs:
           path: build/app/outputs/flutter-apk
 
       - run: ls -la
-      - run: cd build/
+      - run: cd build/app/outputs/flutter-apk
       - run: ls -la
 
       # - name: Release app to App Center partner store
