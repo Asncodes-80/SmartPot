@@ -58,8 +58,8 @@ jobs:
       #     path: build/app/outputs/flutter-apk
 
       - run: ls -la
-      - run: ls /build/app/outputs/flutter-apk
-      - run: du -h /build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+      - run: cd build/
+      - run: ls -la
 
       # - name: Release app to App Center partner store
       #   uses: wzieba/AppCenter-Github-Action@v1
