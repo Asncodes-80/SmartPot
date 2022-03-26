@@ -61,7 +61,7 @@ jobs:
           cd build/app/outputs/flutter-apk/ && ls && pwd
 
       - name: Release app to App Center partner store
-        uses: wzieba/AppCenter-Github-Action@v1
+        uses: wzieba/AppCenter-Github-Action@v1.3.2
         with: 
           appName: alirezacodes/smart_pot_V${{ env.appVersion }}
           token: ${{ secrets.MS_APP_CENTER_TOKEN }}
