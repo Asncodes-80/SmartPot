@@ -60,12 +60,12 @@ jobs:
       - run: |
           cd build/app/outputs/flutter-apk/ && ls && pwd
 
-      # - name: Release app to App Center partner store
-      #   uses: wzieba/AppCenter-Github-Action@v1
-      #   with: 
-      #     appName: SmartPot/SmartPot${{ env.appVersion }}
-      #     token: ${{ secrets.MS_APP_CENTER_TOKEN }}
-      #     group: Testers
-      #     file: build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
-      #     notifyTesters: true
-      #     debug: false
+      - name: Release app to App Center partner store
+        uses: wzieba/AppCenter-Github-Action@v1
+        with: 
+          appName: alirezacodes/smart_pot_V${{ env.appVersion }}
+          token: ${{ secrets.MS_APP_CENTER_TOKEN }}
+          group: Testers
+          file: build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+          notifyTesters: true
+          debug: false
