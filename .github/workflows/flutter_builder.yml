@@ -7,40 +7,40 @@ on:
     
 # on: push
 jobs:
-  # build:
-  #   name: Build Flutter app
-  #   # This job will run on ubuntu virtual machine
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     appVersion: 0.0.0 
-  #   steps:
-  #     - uses: actions/checkout@v2
+  build:
+    name: Build Flutter app
+    # This job will run on ubuntu virtual machine
+    runs-on: ubuntu-latest
+    env:
+      appVersion: 0.0.0 
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - uses: actions/setup-java@v1
-  #       with:
-  #         java-version: '11.x'
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11.x'
 
-  #     # Setup the flutter environment.
-  #     - uses: subosito/flutter-action@v2
-  #       with:
-  #         channel: stable # 'dev', 'alpha', 'beta', 'stable'
-  #         flutter-version: 2.10.3
-  #         cache: true
-  #         cache-key: asn_flutter_build_ci
-  #         cache-path: ${{ runner.tool_cache }}
+      # # Setup the flutter environment.
+      # - uses: subosito/flutter-action@v2
+      #   with:
+      #     channel: stable # 'dev', 'alpha', 'beta', 'stable'
+      #     flutter-version: 2.10.3
+      #     cache: true
+      #     cache-key: asn_flutter_build_ci
+      #     cache-path: ${{ runner.tool_cache }}
 
-  #     - run: |
-  #         flutter clean
-  #         flutter pub get
-  #         flutter build apk --split-per-abi
-  #         mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
-  #         build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+      # - run: |
+      #     flutter clean
+      #     flutter pub get
+      #     flutter build apk --split-per-abi
+      #     mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
+      #     build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
 
-  #     # Upload generated apk to the artifacts.
-  #     - uses: actions/upload-artifact@v3
-  #       with:
-  #         name: release-apk
-  #         path: build/app/outputs/flutter-apk
+      # # Upload generated apk to the artifacts.
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: release-apk
+      #     path: build/app/outputs/flutter-apk
 
   release:
     name: Release Flutter app
@@ -52,10 +52,10 @@ jobs:
       - uses: actions/checkout@v2
       # Download last artifact from the upload artifact in the previous build job.
       # Our file name after download would be release-apk.
-      - uses: actions/download-artifact@v3.0.0
-        with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk
+      # - uses: actions/download-artifact@v3.0.0
+      #   with:
+      #     name: release-apk
+      #     path: build/app/outputs/flutter-apk
 
       - run: ls -la
       - run: ls /build/app/outputs/flutter-apk
