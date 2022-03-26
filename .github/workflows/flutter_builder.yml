@@ -31,13 +31,13 @@ jobs:
           flutter pub get
           flutter build apk --split-per-abi
           mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
-          build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+          build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
 
       # Upload generated apk to the artifacts.
       - uses: actions/upload-artifact@v3
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+          path: build/app/outputs/flutter-apk
 
   release:
     name: Release Flutter app
@@ -52,6 +52,7 @@ jobs:
       - uses: actions/download-artifact@v3.0.0
         with:
           name: release-apk
+          path: build/app/outputs/flutter-apk
 
       - name: Release app to App Center partner store
         uses: wzieba/AppCenter-Github-Action@v1
@@ -59,6 +60,6 @@ jobs:
           appName: SmartPot/SmartPot${{ env.appVersion }}
           token: ${{ secrets.MS_APP_CENTER_TOKEN }}
           group: Testers
-          file: com.SmartPotV${{env.appVersion}}.apk
+          file: build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
           notifyTesters: true
           debug: false
