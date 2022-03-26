@@ -47,14 +47,18 @@ jobs:
       appVersion: 0.0.0 
     steps:
       - uses: actions/checkout@v2
+      # Download last artifact from the upload artifact in the previous build job.
       - uses: actions/download-artifact@v3.0.0
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
-      - name: Release app to GitHub
-        uses: 1fxe/GitHub-Release-Action@v1.0.2
-        with:
-          release_token: ${{ secrets.RELEASE_TOKEN }}
-          release_tag: v${{ env.appVersion }}
-          release_title: Release v${{ env.appVersion }}
-          release_file: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+
+      - name: Release app to App Center partner store
+        uses: wzieba/AppCenter-Github-Action@v1
+        with: 
+          appName: SmartPot/SmartPot${{ env.appVersion }}
+          token: ${{ secrets.MS_APP_CENTER_TOKEN }}
+          group: Testers
+          file: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+          notifyTesters: true
+          debug: false
