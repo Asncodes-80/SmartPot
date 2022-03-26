@@ -40,8 +40,8 @@ jobs:
     env:
       appVersion: 0.0.0 
     steps:
-      - name: Generate Release with Tag
-      - uses: 1fxe/GitHub-Release-Action@v1.0.2
+      - name: Release app to GitHub
+        uses: 1fxe/GitHub-Release-Action@v1.0.2
         with:
           release_token: ${{ secrets.RELEASE_TOKEN }}
           release_tag: v${{ env.appVersion }}
