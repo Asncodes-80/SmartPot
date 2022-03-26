@@ -48,10 +48,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Download last artifact from the upload artifact in the previous build job.
+      # Our file name after download would be release-apk.
       - uses: actions/download-artifact@v3.0.0
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
 
       - name: Release app to App Center partner store
         uses: wzieba/AppCenter-Github-Action@v1
@@ -59,6 +59,6 @@ jobs:
           appName: SmartPot/SmartPot${{ env.appVersion }}
           token: ${{ secrets.MS_APP_CENTER_TOKEN }}
           group: Testers
-          file: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
+          file: com.SmartPotV${{env.appVersion}}.apk
           notifyTesters: true
           debug: false
