@@ -20,27 +20,27 @@ jobs:
         with:
           java-version: '11.x'
 
-      # # Setup the flutter environment.
-      # - uses: subosito/flutter-action@v2
-      #   with:
-      #     channel: stable # 'dev', 'alpha', 'beta', 'stable'
-      #     flutter-version: 2.10.3
-      #     cache: true
-      #     cache-key: asn_flutter_build_ci
-      #     cache-path: ${{ runner.tool_cache }}
+      # Setup the flutter environment.
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable # 'dev', 'alpha', 'beta', 'stable'
+          flutter-version: 2.10.3
+          cache: true
+          cache-key: asn_flutter_build_ci
+          cache-path: ${{ runner.tool_cache }}
 
-      # - run: |
-      #     flutter clean
-      #     flutter pub get
-      #     flutter build apk --split-per-abi
-      #     mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
-      #     build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
+      - run: |
+          flutter clean
+          flutter pub get
+          flutter build apk --split-per-abi
+          mv build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk \
+          build/app/outputs/flutter-apk/com.SmartPotV${{ env.appVersion }}.apk
 
-      # # Upload generated apk to the artifacts.
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: release-apk
-      #     path: build/app/outputs/flutter-apk
+      # Upload generated apk to the artifacts.
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: build/app/outputs/flutter-apk
 
   release:
     name: Release Flutter app
