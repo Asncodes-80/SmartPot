@@ -35,6 +35,7 @@ jobs:
           name: release-apk
           path: build/app/outputs/flutter-apk/com.SmartPotV${{env.appVersion}}.apk
   release:
+    needs: build
     name: Release apk app
     runs-on: ubuntu-latest
     env:
