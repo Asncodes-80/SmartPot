@@ -13,7 +13,7 @@ In server side use from this method:
  - BaseURL is `https://fcm.googleapis.com/fcm/send` use POST.
  - Using keep-alive connection in API side.
  - Use this key to match that with device token of firebase fcm in Authorization header of request: `key=AAAAYMj0ooI:APA91bHLqUXjQjMULFnRMn_JfkYvNdBrCvH6habJYlsS3NRSpi5PQqJWDH-NymOVmCPkHm7UsJIQlg0yBXVmuAkd2Ge-OElEM38VGd5Dubriy5gKghlCP01x-BPX1vnGFl0xi62NTT8-`
- - In body of request use this format:
+ - In body of request use this format
 
 ```json
 { 
